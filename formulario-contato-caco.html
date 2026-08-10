@@ -5,28 +5,32 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vamos conversar? — Caco Rocha</title>
 <style>
-body{margin:0;background:transparent;color:#222;font-family:Arial,Helvetica,sans-serif}
-.wrap{max-width:720px;margin:auto;padding:28px 22px}
-h2{margin:0 0 8px;font-size:28px}
-p{line-height:1.6;margin:0 0 26px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#000;color:#f2f2f2}
+body{font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:720px;margin:auto;padding:28px 22px 34px}
+h2{margin:0 0 10px;font-size:28px}
+.intro{margin:0 0 26px;color:#bdbdbd;font-size:16px;line-height:1.6}
 .field{margin:0 0 20px}
-label{display:block;font-weight:700;margin-bottom:8px;font-size:15px}
-input,select,textarea{width:100%;box-sizing:border-box;border:1px solid #bbb;border-radius:6px;padding:13px 14px;font:inherit;background:#fff}
+label{display:block;margin-bottom:8px;font-size:15px;font-weight:700}
+input,textarea{width:100%;border:1px solid #555;border-radius:6px;padding:13px 14px;background:#111;color:#f2f2f2;font:inherit;font-size:15px;outline:none}
+input::placeholder,textarea::placeholder{color:#999}
+input:focus,textarea:focus{border-color:#ddd}
 textarea{min-height:150px;resize:vertical}
-button{border:0;border-radius:6px;padding:13px 24px;background:#222;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+button{border:0;border-radius:6px;padding:13px 24px;background:#f2f2f2;color:#111;font:inherit;font-weight:700;font-size:15px;cursor:pointer}
+@media(max-width:600px){.wrap{padding:20px 14px 28px}h2{font-size:24px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h2>Vamos conversar?</h2>
-<p>Se você chegou até aqui, talvez exista uma oportunidade, um projeto, uma parceria ou simplesmente uma ideia que valha uma conversa.</p>
+<p class="intro">Se você chegou até aqui, talvez exista uma oportunidade, um projeto, uma parceria ou simplesmente uma ideia que valha uma conversa.</p>
 <form action="https://formsubmit.co/cacodelarocha@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Nova mensagem pelo site — Caco Rocha">
 <input type="hidden" name="_template" value="table">
-<div class="field"><label>Nome</label><input name="Nome" type="text" placeholder="Como posso chamar você?" required></div>
-<div class="field"><label>E-mail</label><input name="E-mail" type="email" placeholder="seu@email.com" required></div>
-<div class="field"><label>Motivo do contato</label><select name="Motivo do contato"><option value="">Selecione uma opção</option><option>Oportunidade profissional</option><option>Projeto / trabalho</option><option>Parceria</option><option>Networking</option><option>Outro</option></select></div>
-<div class="field"><label>Mensagem</label><textarea name="Mensagem" placeholder="Escreva sua mensagem..." required></textarea></div>
+<div class="field"><label for="nome">Nome</label><input id="nome" name="Nome" type="text" placeholder="Como posso chamar você?" required></div>
+<div class="field"><label for="email">E-mail</label><input id="email" name="E-mail" type="email" placeholder="seu@email.com" required></div>
+<div class="field"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="Mensagem" placeholder="Escreva sua mensagem..." required></textarea></div>
 <button type="submit">Enviar mensagem</button>
 </form>
 </div>
